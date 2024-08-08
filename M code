@@ -1,0 +1,126 @@
+
+let answer = '';
+
+let MaxWrong = 6;
+
+let Guessed  = [];
+
+let mistakes = 0
+
+
+
+let Choice = prompt("Direction, or Skip ---->")
+
+if(Choice == "Direction") {
+  console.log("In this game your goal is to guess the word depending on what option you picked. You would have to type in the lettter to be able to guess what the word.")
+  let 
+} else if(Choice == "Skip"){
+  let start = prompt("Type Start ---->")
+}else if(start == "Start"){
+  console.log("Type in a option (Animals, Sports, Brands")
+}
+
+
+let start = prompt(" To get started press start ---->")
+
+if (start == "start") {
+  console.log("What type of catagory would you like to pick (Animals, Sports, Brands) and type in one of them.")
+}
+
+
+
+
+
+//Generate a randome word from the animal array
+function RandomWord (){
+  answer = Animals[Math.floor(Math.random() * answer.length)]
+}
+
+RandomWord()
+
+//Generate a randome word from the Sports array
+function RandomWord1 (){
+  answer = Sports[Math.floor(Math.random() * answer.length)]
+}
+
+RandomWord1()
+
+//Generate a randome word from the Brands array
+function RandomWord2 (){
+  answer = Brands[Math.floor(Math.random() * answer.length)]
+}
+
+RandomWord2()
+
+"a","b", "c", "d,", "e", "f,","g", "h", "i", "j", "k", "l", "m", "n","o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y","z"
+
+
+
+// store the letter the user type in.
+function Letterguessed(letter) {
+  //check if the word that was picked randomly has the letter the user type in.
+  if (selRanWord.includes(letter)) {
+
+    for (let i = 0; i < selRanWord.length; i++) {
+      if (selRanWord[i] === letter) {
+        guessWord[i] = letter
+      }
+    }
+  } else {
+    //add to the count for wrong guesses
+    WrongGuess++
+  }
+}
+
+
+
+function check (letter){
+  if(guessWord.includes(letter)){
+    for(let i = 0; 1 < guessWord.length;i++){
+      if(guessWord[i] === letter){
+        guessWord[i] = letter
+      }
+    }
+  }else{
+    WrongGuess++
+  }
+}
+
+
+
+
+
+function start() {
+  while (WrongGuess < MaxWrong) {
+    ShowGame()
+// what ever the user writes it will be set in lowercase 
+    const UserInput = prompt("Guess A Letter --->").toLowerCase();
+//  /[a-z]/ make sure the guessing letter is a single lowercase letter
+    if (UserInput.match(/[a-z]/) && UserInput.length === 1 ) {
+        LetterGuessed(UserInput)
+    } else {
+       //If not it willshow Enter single letter ONLY.
+      console.log(" Enter single letter ONLY.")
+    }
+  }
+  //Calling the function
+  ShowGame()
+// if you got the word right or wrong it will show eiher one of the console.log.
+  if (guessWord.join(" ") === selRanWord) {
+    console.log("You Guessed The Word!!!!!!!!!")
+  } else {
+    console.log(`You lost, The word was ${selRanWord}.`)
+  }
+
+}
+
+
+
+
+//Select a word from the array animal
+// Game state    //.fill replaces an element with a value you assign it with.
+//Will show the wrong guesses you have and max wrong you could get.
+// .join Seperate the value.
+//it shows how much letter their is, wrong guesses.
+// The amount you get wrong and the max you can get wrong is stored here.
+// Game state    //.fill replaces an element with a value you assign it with.
